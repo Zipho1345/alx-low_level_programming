@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - prints all possible different combination of three digits
+ * main - prints all possible different combinations of three digits
  * Return: Always 0 (Success)
  */
 int main(void)
@@ -17,7 +17,7 @@ int main(void)
 				{
 					putchar(n);
 					putchar(m);
-					putchar(i);
+					putchar(l);
 					if (n != 55 || m != 56)
 					{
 						putchar(',');
@@ -27,6 +27,6 @@ int main(void)
 			}
 		}
 	}
-	putchar('\n')
+	putchar('\n');
 		return (0);
 }
