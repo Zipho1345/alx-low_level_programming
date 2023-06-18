@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - prints all possible different combinations of three digits
+ * main - prints all possible combinations of two two-digits numbers
  * Return: Always 0 (Success)
  */
 int main(void)
@@ -26,6 +26,6 @@ int main(void)
 			}
 		}
 	}
-	putchat('\n');
+	putchar('\n');
 	return (0);
 }
