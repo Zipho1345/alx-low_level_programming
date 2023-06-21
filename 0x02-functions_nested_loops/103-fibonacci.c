@@ -7,6 +7,7 @@
 int main(void)
 {
 	int i;
+
 	unsigned long int j, k, next, sum;
 
 	j = 1;
@@ -19,7 +20,7 @@ int main(void)
 		{
 			sum = sum + j;
 		}
-		next = j;
+		next = j + k;
 		j = k;
 		k = next;
 	}
