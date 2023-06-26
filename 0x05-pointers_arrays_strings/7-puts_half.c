@@ -1,4 +1,4 @@
-#include "main."
+#include "main.h"
 /**
  * puts_half - a function that prints half of a strin
  * if odd len, n = (length_of_the_string - 1) / 2
