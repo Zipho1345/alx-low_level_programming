@@ -8,7 +8,6 @@ void rev_string(char *n)
 {
 	int i = 0;
 	int i = 0;
-
 	char temp;
 
 	while (*(n + i) != '\0')
@@ -16,6 +15,7 @@ void rev_string(char *n)
 		i++;
 	}
 	i--;
+
 	for (j = 0; j < i; j++, i--)
 	{
 		temp = *(n + j);
@@ -23,6 +23,7 @@ void rev_string(char *n)
 		*(n + i) = temp;
 	}
 }
+
 /**
  * infinite_add - add 2 numbers together
  * @n1: text representation of 1st number to add
@@ -42,6 +43,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		j++;
 	i--;
 	j--;
+
 	if (j >= size_r || i >= size_r)
 		return (0);
 	while (j >= 0 || i >= 0 || overflow == 1)
