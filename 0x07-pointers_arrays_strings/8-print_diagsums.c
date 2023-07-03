@@ -1,6 +1,7 @@
-include "main.h"
+include = "main.h"
 #include <stdio.h>
 #include <unistd.h>
+#include <stddef.h>
 /**
  * print_diagsums - Entry point
  * @a: input
