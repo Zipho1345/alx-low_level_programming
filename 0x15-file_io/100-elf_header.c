@@ -96,7 +96,7 @@ void print_data(unsigned char *e_ident)
 			case ELFDATA2MSB:
 			printf("2's complement, big endian\n");
 			break;
-			default;
+			default:
 			printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
@@ -106,8 +106,7 @@ void print_data(unsigned char *e_ident)
  */
 void print_version(unsigned char *e_ident)
 {
-	printf("  Version:
-			%d",
+	printf("  Version:                           %d",
 			e_ident[EI_VERSION]);
 
 	switch (e_ident[EI_VERSION])
@@ -115,7 +114,7 @@ void print_version(unsigned char *e_ident)
 		case EV_CURRENT:
 			printf(" (current)\n");
 			break;
-			default;
+		default:
 			printf("\n");
 			break;
 	}
@@ -160,7 +159,7 @@ void print_osabi(unsigned char *e_ident)
 			case ELFOSABI_STANDALONE:
 			printf("Standalone App\n");
 			break;
-			default;
+			default:
 			printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 	}
 }
@@ -168,10 +167,9 @@ void print_osabi(unsigned char *e_ident)
  * print_abi - Prints the ABI version of an ELF header.
  * @e_ident: A pointer to an array containing the ELF ABI version.
  */
-void print_abi(unsigned char
-*e_ident)
+void print_abi(unsigned char *e_ident)
 {
-        printf("  ABI Version:                       %d\n",
+	printf("  ABI Version:                       %d\n",
 			e_ident[EI_ABIVERSION]);
 }
 /**
@@ -179,8 +177,8 @@ void print_abi(unsigned char
  * @e_type: The ELF type.
  * @e_ident: A pointer to an array containing the ELF class.
  */
-void print_type(unsigned int
-e_type, unsigned char *e_ident)
+void print_type(unsigned int e_type,
+		unsigned char *e_ident)
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
@@ -188,9 +186,9 @@ e_type, unsigned char *e_ident)
 	switch (e_type)
 	{
 		case ET_NONE:
-			printf("NONE (None)\n")
-				break;
-			case ET_REL:
+			printf("NONE (None)\n");
+			break;
+		case ET_REL:
 			printf("REL (Relocatable file)\n");
 			break;
 			case ET_EXEC:
@@ -202,7 +200,7 @@ e_type, unsigned char *e_ident)
 			case ET_CORE:
 			printf("CORE (Core file)\n");
 			break;
-			default;
+			default:
 			printf("<unknown: %x>\n", e_type);
 	}
 }
@@ -211,8 +209,9 @@ e_type, unsigned char *e_ident)
  * @e_entry: The address of the ELF entry point.
  * @e_ident: A pointer to an array containing the ELF class.
  */
-void print_entry(unsigned long int e_entry,
-		unsigned char *e_ident)
+void print_entry(unsigned long int
+e_entry, unsigned char
+*e_ident)
 {
 	printf("  Entry point address:               ");
 
@@ -233,7 +232,8 @@ void print_entry(unsigned long int e_entry,
  * Description: pIf the file cannot be
  * closed - exit code 98.
  */
-void close_elf(int elf)
+void close_elf(int
+elf)
 {
 	if (close(elf) == -1)
 	{
@@ -253,8 +253,8 @@ void close_elf(int elf)
  * Description: If the file is not an ELF File or
  *              the function fails - exit code 98.
  */
-int main(int __attribute__((__unused__))
-		argc, char *argv[])
+int main(int
+		__attribute__((__unused__)) argc, char *argv[])
 {
 	Elf64_Ehdr *header;
 	int o, r;
